@@ -204,6 +204,8 @@ body.entry
               li
                 margin: 0 0 0.8em 0
                 line-height: 1.4
+                font:
+                  size: $size-14px
           h2
             font:
               size: $size-22px
@@ -224,10 +226,22 @@ body.entry
               display: block
               margin: 3em auto
           blockquote
-            padding: 1.8em 2.2em 0.1em 2.2em
+            padding: 1.8em 4em 0.1em 2.2em
+            position: relative
             margin: 0 0 2em 0
             border-left: none
             +box-shadow(rgba(100, 100, 100, .1) 0 0 20px inset)
             background: rgba(160, 160, 160, .1)
             font:
               style: italic
+            &:before
+              content: ";"
+              display: block
+              position: absolute
+              right: 0.3em
+              top: -0.3em
+              color: rgba(0, 0, 0, .3)
+              font:
+                style: normal
+                family: 'EntypoRegular'
+                size: 60px

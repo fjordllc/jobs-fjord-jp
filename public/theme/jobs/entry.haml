@@ -7,7 +7,9 @@
         %h1= @entry.title
         .date
           %ul
-            %li.year= @entry.created_at.year
+            %li.year
+              %i.icon-calendar
+              = @entry.created_at.year
             %li.month= @entry.created_at.strftime("%b")
             %li.day= @entry.created_at.strftime("%d")
       .body
@@ -29,6 +31,11 @@
               %a{:href => "/"} あああああああああああああああああああああああああ
             %li
               %a{:href => "/"} あああああああああああああああああああああああああ
+      .application
+        %p
+          この会社の仕事に興味を持った方はこちらをどうぞ。
+        %a{:href => "/"} あああああああああああああああああああああああああ
+          
   .info
     - unless @entry.tags.size.zero?
       = @post.tags_to_html
