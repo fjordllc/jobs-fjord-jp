@@ -1,0 +1,33 @@
+.articles
+  - unless index?
+    %h1.title= @title
+  - @posts.each do |post|
+    %article
+      .inner.row-fluid
+        .image.span4
+          <a href="http://www.flickr.com/photos/fjord_llc/7498708520/" title="Untitled by 町田 哲平（teppei machida）, on Flickr"><img src="http://farm8.staticflickr.com/7139/7498708520_b84b163c60_z.jpg" width="640" height="480" alt="Untitled"></a>
+        .main.span8
+          %header
+            %h1
+              %a{:href => url(post.link)}= post.title
+          .body
+            .date
+              %ul
+                %li.month= post.created_at.strftime("%b")
+                %li.day= post.created_at.strftime("%d")
+                %li.year= post.created_at.year
+            .description
+              %p
+                不思議の国のお話がそだちゆっくり、そして一つ一つその風変わりなできごとがうちだされ――そして今やお話は終わりそしてみんなでおうちへと向かう楽しい船乗りたちが夕日の下でアリス！子どもじみたおとぎ話を
+            .info
+              - unless post.category.nil?
+                %p.category
+                  %a{:href => url(post.category.link)}= post.category.title
+  .pager
+    %div
+      - if @posts.pager.previous_page
+        %span.previous
+          %a{:href => "?page=#{@posts.pager.previous_page}"} Newer
+      - if @posts.pager.next_page
+        %span.next
+          %a{:href => "?page=#{@posts.pager.next_page}"} Older

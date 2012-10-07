@@ -1,0 +1,37 @@
+%article
+  .inner
+    .category_image
+      %img{:src => "#{@theme.path}/images/actindi/eyecatch.jpg"}
+    .content
+      .title
+        %h1= @entry.title
+        .date
+          %ul
+            %li.year= @entry.created_at.year
+            %li.month= @entry.created_at.strftime("%b")
+            %li.day= @entry.created_at.strftime("%d")
+      .body
+        = @entry.body
+        %nav.index
+          %h2
+            - unless @entry.category.nil?
+              %a{:href => url(@entry.category.link)}
+                #{@entry.category.title}
+            
+          %h3
+            目次
+          %ol
+            %li
+              %a{:href => "/"} あああああああああああああああああああああああああ
+            %li
+              %a{:href => "/"} あああああああああああああああああああああああああ
+            %li
+              %a{:href => "/"} あああああああああああああああああああああああああ
+            %li
+              %a{:href => "/"} あああああああああああああああああああああああああ
+  .info
+    - unless @entry.tags.size.zero?
+      = @post.tags_to_html
+    - if logged_in?
+      .edit
+        %a{:href => url(@entry.edit_link)}= t('edit')

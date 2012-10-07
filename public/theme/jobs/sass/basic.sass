@@ -1,0 +1,233 @@
+@charset "UTF-8"
+
+$red: #aa2727
+$blue: #1c658e
+$green: #719fa5
+$gray: #c8c8c3
+$white: #fff
+$black: #3c3c37
+
+body
+  background: url(images/body.gif)
+  font-family: serif
+  color: $black
+  @media screen and (max-width: 720px)
+    padding: 0 10px
+  a
+    color: $blue
+.container
+  max-width: 768px
+#header
+  .inner
+    padding: 2em 0
+  .eyecatch
+    margin: 1.4em 0 0 0
+    text-align: center
+    +text-shadow(rgba(255, 255, 255, .4) 0 1px 0)
+    font:
+      size: $size-28px
+  .title
+    text-align: center
+    a
+      margin: 0 0 0.8em 0
+      display: block
+      +text-shadow(rgba(255, 255, 255, .4) 0 1px 0)
+      font:
+        size: $size-18px
+        weight: bold
+    h1
+      line-height: 1
+      margin: 0
+      +text-shadow(rgba(255, 255, 255, .4) 0 1px 0)
+      font:
+        size: $size-12px
+#footer
+  border:
+    top: rgba(0, 0, 0, .2) dotted 1px
+  padding: 2em 0 3em 0
+  .copyright
+    text-align: center
+    margin: 0 0 1em 0
+
+.articles
+  padding: 1.2em 0 0 0
+  h1.title
+    margin: 0 0 1em 0
+  article
+    background: rgba(255, 255, 255, .6)
+    padding: 1.2em
+    margin: 0 0 1.8em 0
+    +border-radius(6px)
+    +box-shadow(rgba(0, 0, 0, .2) 0 1px 3px, rgba(255, 255, 255, .8) 0 1px 1px inset, rgba(80, 80, 80, .1) 0 0 20px inset)
+    height: 160px
+    position: relative
+    +clearfix
+    @media screen and (max-width: 720px)
+      height: auto
+    .image
+      height: 160px
+      background: $green
+      overflow: hidden
+      +border-top-radius(3px)
+    .main
+      header
+        margin: 0 0 1.2em 0
+        padding: 0 5em 0.4em 0
+        border-bottom: rgba(0, 0, 0, .1) dotted 1px
+        @media screen and (max-width: 720px)
+          padding: 0.3em 0 0 0
+        h1
+          font:
+            size: $size-22px
+          margin: 0
+          line-height: 1.4
+          a
+            color: $black
+      .body
+        .date
+          position: absolute
+          top: 0
+          right: 1em
+          width: 4.4em
+          height: 5em
+          background: $blue
+          +box-shadow(rgba(0, 0, 0, .2) 0 2px 3px, rgba(0, 0, 0, .1) 0 0 1px inset)
+          ul
+            margin: 0
+            padding: 0.2em 0 0 0
+            li
+              display: block
+              color: $white
+              +text-shadow(rgba(0, 0, 0, .2) 0 -1px 0)
+              text-align: center
+              font:
+                family: 'Podkova', serif
+              &.month
+                font:
+                  size: $size-12px
+              &.day
+                font:
+                  size: $size-14px
+                line-height: 1
+              &.year
+                margin: 0
+                font:
+                  size: $size-12px
+
+body.entry
+  article
+    .inner
+      +border-radius(6px)
+      +box-shadow(rgba(0, 0, 0, .3) 0 1px 5px)
+      position: relative
+      margin: 0 0 3em 0
+      +clearfix
+      .category_image
+        background: #000
+        +border-top-radius(6px)
+        max-height: 300px
+        overflow: hidden
+        img
+          +border-top-radius(6px)
+      .content
+        background: rgba(255, 255, 255, .6)
+        padding: 2.6em 6em
+        margin: 0
+        +border-bottom-radius(6px)
+        +box-shadow(rgba(255, 255, 255, .8) 0 0 2px inset, rgba(100, 100, 100, .1) 0 0 100px inset)
+        +clearfix
+        @media screen and (max-width: 720px)
+          padding: 1.2em
+        .title
+          margin: 0 0 1.6em 0
+          h1
+            font:
+              size: $size-28px
+            line-height: 1.4
+            margin: 0 0 0.4em 0
+          .date
+            text-align: right
+            ul
+              margin: 0
+              li
+                display: inline
+        .body
+          nav.index
+            background: rgba(255, 255, 255, .4)
+            border: rgba(0, 0, 0, .1) dotted 1px
+            margin: 3em 0 0 0
+            padding: 1.2em 2em
+            +border-radius(5px)
+            +box-shadow(rgba(140, 140, 140, .1) 0 0 40px inset)
+            position: relative
+            overflow: hidden
+            @media screen and (max-width: 720px)
+              padding: 1.2em
+            a
+              color: $black
+            h2
+              text-align: center
+              margin: 0 0 1em 0
+              font:
+                size: $size-18px
+              @media screen and (max-width: 720px)
+                margin: 0 2em 1em 2em
+                font: 
+                  size: $size-13px
+              &:after,
+              &:before
+                content: "~"
+                font:
+                  family: 'Playfair Display', serif
+                margin: 0 4px
+            h3
+              background: url(images/red.gif)
+              font:
+                size: $size-12px
+              color: $white
+              position: absolute
+              left: -2em
+              top: 1em
+              +rotate(-45deg)
+              display: block
+              width: 8em
+              text-align: center
+              line-height: 1.8
+              +box-shadow(rgba(0, 0, 0, .3) 0 1px 1px)
+              +text-shadow(rgba(0, 0, 0, .4) 0 -1px 0)
+              @media screen and (max-width: 720px)
+                font:
+                  size: $size-10px
+              
+            ol
+              margin: 0 0 0.6em 25px
+              li
+                margin: 0 0 0.8em 0
+                line-height: 1.4
+          h2
+            font:
+              size: $size-22px
+            line-height: 1.4
+            margin: 0 0 0.8em 0
+          h3
+            font:
+              size: $size-18px
+            line-height: 1.4
+            margin: 0 0 1em 0
+          p
+            font:
+              size: $size-14px
+            line-height: 1.7
+            margin: 0 0 1.4em 0
+          p
+            img
+              display: block
+              margin: 3em auto
+          blockquote
+            padding: 1.8em 2.2em 0.1em 2.2em
+            margin: 0 0 2em 0
+            border-left: none
+            +box-shadow(rgba(100, 100, 100, .1) 0 0 20px inset)
+            background: rgba(160, 160, 160, .1)
+            font:
+              style: italic
